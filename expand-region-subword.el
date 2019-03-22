@@ -1,9 +1,12 @@
-;;; expand-region-subword.el --- Plugin for expand-region subword-mode support
+;;; expand-region-subword.el --- subword-mode expansions for expand-region
 
-;; Copyright (C) 2019 Andrew Whatson
+;; Copyright (C) 2019  Free Software Foundation, Inc.
 
 ;; Author: Andrew Whatson <whatson@gmail.com>
-;; Keywords: marking region
+;; Keywords: convenience
+;; Version: 0.1.0
+;; Package-Requires: ((emacs "25.1") (expand-region "0.11.0"))
+;; URL: https://github.com/flatwhatson/expand-region-subword
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,7 +23,7 @@
 
 ;;; Commentary:
 
-;; Auto-load the subword-mode expansions for expand-region.
+;; Additional expansions for `expand-region' when `subword-mode' is enabled.
 
 ;;; Code:
 

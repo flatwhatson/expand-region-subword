@@ -20,10 +20,7 @@ please open an issue or pull-request. The repo is at:
 
 ## License
 
-Copyright (C) 2019 Andrew Whatson
-
-Author: Andrew Whatson <whatson@gmail.com>
-Keywords: marking region
+Copyright (C) 2019  Free Software Foundation, Inc.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
