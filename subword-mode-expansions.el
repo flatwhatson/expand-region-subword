@@ -31,18 +31,16 @@
 (defun er/mark-subword ()
   "Mark a subword, a part of a CamelCase identifier."
   (interactive)
-  (subword-right 1)
-  (set-mark (point))
-  (subword-left 1))
-
-(defvar er/enable-subword-mode? t)
+  (when expand-region-subword-enabled
+    (subword-right 1)
+    (set-mark (point))
+    (subword-left 1)))
 
 (defun er/add-subword-mode-expansions ()
   "Add expansions for buffers in `subword-mode'."
-  (when er/enable-subword-mode?
-    (set (make-local-variable 'er/try-expand-list)
-         (append er/try-expand-list
-                 '(er/mark-subword)))))
+  (set (make-local-variable 'er/try-expand-list)
+       (append er/try-expand-list
+               '(er/mark-subword))))
 
 (er/enable-minor-mode-expansions 'subword-mode 'er/add-subword-mode-expansions)
 
