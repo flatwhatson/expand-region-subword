@@ -38,5 +38,11 @@
 
 (eval-after-load 'subword '(require 'subword-mode-expansions))
 
+(defadvice subword-mode (before er/toggle-expand-subword activate)
+  "Toggle `expand-region-subword' based on the status of `subword-mode'."
+  (if subword-mode
+      (setq expand-region-subword-enabled nil)
+    (setq expand-region-subword-enabled t)))
+
 (provide 'expand-region-subword)
 ;;; expand-region-subword.el ends here
