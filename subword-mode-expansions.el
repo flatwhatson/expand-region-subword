@@ -42,6 +42,16 @@
        (append er/try-expand-list
                '(er/mark-subword))))
 
+;; compatiblity with expand-region-0.11.0
+(unless (functionp 'er/enable-minor-mode-expansions)
+  (defun er/enable-minor-mode-expansions (mode add-fn)
+    (add-hook (intern (format "%s-hook" mode)) add-fn)
+    (save-window-excursion
+      (dolist (buffer (buffer-list))
+        (with-current-buffer buffer
+          (when (symbol-value mode)
+            (funcall add-fn)))))))
+
 (er/enable-minor-mode-expansions 'subword-mode 'er/add-subword-mode-expansions)
 
 (provide 'subword-mode-expansions)
