@@ -32,9 +32,14 @@
   "Mark a subword, a part of a CamelCase identifier."
   (interactive)
   (when expand-region-subword-enabled
-    (subword-right 1)
-    (set-mark (point))
-    (subword-left 1)))
+    (if mark-active
+        (progn
+          (exchange-point-and-mark)
+          (subword-right 1)
+          (exchange-point-and-mark))
+      (subword-right 1)
+      (set-mark (point))
+      (subword-left 1))))
 
 (defun er/add-subword-mode-expansions ()
   "Add expansions for buffers in `subword-mode'."
