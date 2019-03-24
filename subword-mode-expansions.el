@@ -31,7 +31,8 @@
 (defun er/mark-subword ()
   "Mark a subword, a part of a CamelCase identifier."
   (interactive)
-  (when expand-region-subword-enabled
+  (when (and subword-mode
+             expand-region-subword-enabled)
     (subword-right 1)
     (set-mark (point))
     (subword-left 1)))
