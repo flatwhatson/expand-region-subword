@@ -1,4 +1,4 @@
-;;; expand-region-subword.el --- subword-mode expansions for expand-region
+;;; expand-region-subword.el --- subword-mode support for expand-region -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2019  Free Software Foundation, Inc.
 
