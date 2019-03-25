@@ -40,22 +40,20 @@
     (subword-left 1)))
 
 (defun er/add-subword-mode-expansions ()
-  "Add expansions for buffers in `subword-mode'."
-  (set (make-local-variable 'er/try-expand-list)
-       (append er/try-expand-list
-               '(er/mark-subword))))
+  "Install subword expansions for the current buffer."
+  (make-local-variable 'er/try-expand-list)
+  (add-to-list 'er/try-expand-list #'er/mark-subword))
 
-;; compatiblity with expand-region-0.11.0
-(unless (functionp 'er/enable-minor-mode-expansions)
-  (defun er/enable-minor-mode-expansions (mode add-fn)
-    (add-hook (intern (format "%s-hook" mode)) add-fn)
-    (save-window-excursion
-      (dolist (buffer (buffer-list))
-        (with-current-buffer buffer
-          (when (symbol-value mode)
-            (funcall add-fn)))))))
+(defun er/enable-subword-mode-expansions ()
+  "Install subword expansions for all buffers in `subword-mode'."
+  (add-hook 'subword-mode-hook #'er/add-subword-mode-expansions)
+  (save-window-excursion
+    (dolist (buffer (buffer-list))
+      (with-current-buffer buffer
+        (when subword-mode
+          (er/add-subword-mode-expansions))))))
 
-(er/enable-minor-mode-expansions 'subword-mode 'er/add-subword-mode-expansions)
+(er/enable-subword-mode-expansions)
 
 (provide 'subword-mode-expansions)
 ;;; subword-mode-expansions.el ends here
