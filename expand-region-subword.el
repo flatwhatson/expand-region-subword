@@ -27,14 +27,14 @@
 
 ;;; Code:
 
+(define-obsolete-variable-alias 'er/enable-subword-mode?
+  'expand-region-subword-enabled "2019-03-23")
+
 (defcustom expand-region-subword-enabled t
   "Whether expand-region should use subword expansions."
   :group 'expand-region
   :type '(choice (const :tag "Enable subword expansions" t)
                  (const :tag "Disable subword expansions" nil)))
-
-(define-obsolete-variable-alias 'er/enable-subword-mode?
-  'expand-region-subword-enabled "2019-03-23")
 
 (eval-after-load 'subword '(require 'subword-mode-expansions))
 
