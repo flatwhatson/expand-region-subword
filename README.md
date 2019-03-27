@@ -2,29 +2,21 @@
 
 Additional expansions for `expand-region` when `subword-mode` is enabled.
 
-This functionality was originally included with the excellent
-[expand-region](https://github.com/magnars/expand-region) package, but
-has now been split into a separate package.
+## DEPRECATION NOTICE
+
+This functionality is included with the latest version of the excellent
+[expand-region](https://github.com/magnars/expand-region) package.  This
+repository will be removed after the next stable release of `expand-region`.
 
 ## Installation
 
-This package should soon be available on [MELPA](https://melpa.org/).
-
-To install manually, clone the repo and add the following to your emacs
+To install, clone the repo and add the following to your emacs
 configuration:
 
 ``` emacs-lisp
 (add-to-list 'load-path "/path/to/expand-region-subword")
 (require 'expand-region-subword')
 ```
-
-## Contribute
-
-If you have any suggestions or patches for `expand-region-subword`,
-please feel free to open an
-[Issue](https://github.com/flatwhatson/expand-region-subword/issues)
-or submit a
-[Pull Request](https://github.com/flatwhatson/expand-region-subword/pulls).
 
 ## License
 
