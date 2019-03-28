@@ -5,7 +5,7 @@ Additional expansions for `expand-region` when `subword-mode` is enabled.
 ## DEPRECATION NOTICE
 
 This functionality is included with the latest version of the excellent
-[expand-region](https://github.com/magnars/expand-region) package.  This
+[expand-region](https://github.com/magnars/expand-region.el) package. This
 repository will be removed after the next stable release of `expand-region`.
 
 ## Installation
